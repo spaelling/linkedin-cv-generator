@@ -17,6 +17,7 @@ $Template | Out-File -FilePath "$OutputDirectory\cv.md" -Force
 
 # run build task
 npx gulp 'Build Markdown CV'
+# you can also run the build task (ctrl+shift+b) which will set up a watcher that automatically converts the markdown to html when the markdown is changed (triggers on save)
 
 # open generated html file in MS edge
 &'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' @((Resolve-Path -Path ".\output\cv.html").Path)
