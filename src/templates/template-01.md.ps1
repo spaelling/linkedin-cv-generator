@@ -1,10 +1,26 @@
 
+<#
+This template will certainly not result in a markdown file that will pass a linter. 
+But as long as it renders into something that looks nice, we dont care!
+#>
+
+$Websites = $_cv_Profile.Websites.Replace('[', '').Replace(']', '').Split(',') | ForEach-Object { $_.replace('PERSONAL:', '') }
+
 $Template = @"
+<link rel="stylesheet" href="/css/air.css">
+
 # $($_cv_Profile.'First Name') $($_cv_Profile.'Last Name')
 _$($_cv_Profile.'Headline')_
 
 ## About
-$($_cv_Profile.'Summary'.Replace('  ', "\`n"))
+$($_cv_Profile.'Summary'.Replace('  ', "`n`n"))
+
+$(
+  if($Websites.Length -gt 0)
+  {
+    $Websites
+  }
+)
 
 ## Experience
 
