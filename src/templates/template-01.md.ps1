@@ -7,7 +7,10 @@ But as long as it renders into something that looks nice, we dont care!
 $Websites = $_cv_Profile.Websites.Replace('[', '').Replace(']', '').Split(',') | ForEach-Object { $_.replace('PERSONAL:', '') }
 
 $Template = @"
-<link rel="stylesheet" href="/css/air.css">
+---
+title: Test
+layout: Template\default.jade
+---
 
 # $($_cv_Profile.'First Name') $($_cv_Profile.'Last Name')
 _$($_cv_Profile.'Headline')_
@@ -18,7 +21,9 @@ $($_cv_Profile.'Summary'.Replace('  ', "`n`n"))
 $(
   if($Websites.Length -gt 0)
   {
-    $Websites
+    foreach ($Website in $Websites) {
+      "[$Website]($Website)"
+    }
   }
 )
 
