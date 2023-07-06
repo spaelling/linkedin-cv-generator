@@ -1,21 +1,22 @@
+
 $Template = @"
-# Your Name
+# $($_cv_Profile.'First Name') $($_cv_Profile.'Last Name')
+_$($_cv_Profile.'Headline')_
+
 ## About
-Write a brief introduction about yourself, highlighting your skills, achievements and goals.
+$($_cv_Profile.'Summary'.Replace('  ', "\`n"))
 
 ## Experience
-List your relevant work experience in reverse chronological order, with the most recent one first. Include the job title, company name, location, and dates of employment. Use bullet points to describe your main responsibilities and accomplishments.
 
-- Job Title, Company Name, Location (Month Year - Month Year)
-  - Responsibility or accomplishment 1
-  - Responsibility or accomplishment 2
-  - Responsibility or accomplishment 3
+$(
+  foreach ($position in $_cv_Positions) {
 
-- Job Title, Company Name, Location (Month Year - Month Year)
-  - Responsibility or accomplishment 1
-  - Responsibility or accomplishment 2
-  - Responsibility or accomplishment 3
-
+"### $($position.Title), $($position.'Company Name')`n"
+"$($position.'Started On')-$($position.'Finished On')`n`n"
+"$($position.Description.Replace('  ', "\`n"))"
+"`n`n"
+  }
+)
 ## Licenses & Certifications
 
 $(
@@ -35,16 +36,22 @@ $(
 )
 
 ## Recommendations
-Include one or two quotes from people who can vouch for your work quality, performance or character. Include their name, title, and affiliation.
 
-- "Quote from a recommender." - Name, Title, Affiliation
-- "Quote from a recommender." - Name, Title, Affiliation
+$_cv_Recommendations_Received
+
+$(
+  foreach ($recomendation in $_cv_Recommendations_Received) {
+" - $($recomendation.Text) - *$($recomendation.'First Name') $($recomendation.'Last Name'), $($recomendation.'Company'), $($recomendation.'Job Title')*`n"
+  }
+)
 
 ## Languages
-List the languages that you can speak, read or write. Indicate your level of proficiency using terms such as native, fluent, proficient, intermediate or basic.
 
-- Language: Level of proficiency
-- Language: Level of proficiency
+$(
+  foreach ($lang in $_cv_Languages) {
+" - $($lang.Name), $($lang.Proficiency)`n"
+  }
+)
 
 CV generated using [github.com/spaelling/linked-cv-generator](https://github.com/spaelling/linked-cv-generator)
 "@

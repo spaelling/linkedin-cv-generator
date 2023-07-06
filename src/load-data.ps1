@@ -50,3 +50,14 @@ $_cv_Certifications = $_cv_Certifications | Sort-Object -Property FinishedOn, Na
 # sort projects by date
 Add-DateTimes -Data $_cv_Projects -VariableName "Started On" -DateTimeVariableName "StartedOn"
 $_cv_Projects = $_cv_Projects | Sort-Object -Property StartedOn, Title -Descending
+# only include visible recomendations
+$_cv_Recommendations_Received = $_cv_Recommendations_Received | Where-Object { $_.Status -eq "VISIBLE" }
+#
+Add-DateTimes -Data $_cv_Positions -VariableName "Started On" -DateTimeVariableName "StartedOn"
+$_cv_Positions = $_cv_Positions | Sort-Object -Property StartedOn, Title -Descending | ForEach-Object {
+    # if there is no finshed date, then set the value to 'Current'
+    if ([string]::IsNullOrEmpty($_.'Finished On')) {
+        $_.'Finished On' = 'Current'
+    }
+    $_
+}

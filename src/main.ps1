@@ -8,5 +8,3 @@ $TemplateFile = ".\templates\template-01.md.ps1"
 . "$TemplateFile"
 
 $Template | Out-File -FilePath $OutputPath -Force
-
-
