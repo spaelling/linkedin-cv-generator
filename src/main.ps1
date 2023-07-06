@@ -2,7 +2,6 @@
 npm install
 
 # ser PowerShell variables
-$TargetFolder = 'C:\Users\spael\Downloads\Basic_LinkedInDataExport_07-05-2023'
 $OutputDirectory = '.\output'
 $TemplateFile = ".\src\templates\template-01.md.ps1"
 
@@ -13,7 +12,7 @@ $TemplateFile = ".\src\templates\template-01.md.ps1"
 # create folder if it does not exist
 $null = New-Item -ItemType Directory -Force -Path $OutputDirectory
 # output to markdown
-$Template | Out-File -FilePath "$OutputDirectory\cv.md" -Force
+$Template | Out-File -FilePath "$OutputDirectory\cv.md" -Force -Encoding utf8
 
 # run build task
 npx gulp 'Build Markdown CV'

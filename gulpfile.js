@@ -15,6 +15,6 @@ gulp.task('Build Markdown CV', function () {
         .pipe(gulp.dest('./output'));
 });
 
-gulp.task('default', function() {
-    gulp.watch('src/output/*.md', gulp.series('Build Markdown CV'));
+gulp.task('default', function () {
+    gulp.watch('./output/*.md', gulp.series('Build Markdown CV'));
 });

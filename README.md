@@ -22,4 +22,12 @@ And it will look something like this
 
 ![get data](./media/download_archive.png)
 
-Download and unzip the files. Then follow the steps in [main.ps1](/src/main.ps1)
+Download and unzip the files. 
+
+set the variable to point to where the files was extracted to. Ex.
+
+```powershell
+$TargetFolder = 'C:\Users\spael\Downloads\Basic_LinkedInDataExport_07-05-2023'
+```
+
+Follow the steps in [main.ps1](/src/main.ps1)
