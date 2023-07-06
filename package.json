@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/spaelling/linked-cv-generator.git"
+    "url": "git+https://github.com/spaelling/linkedin-cv-generator.git"
   },
   "author": "Anders Spælling, spaelling@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/spaelling/linked-cv-generator/issues"
+    "url": "https://github.com/spaelling/linkedin-cv-generator/issues"
   },
-  "homepage": "https://github.com/spaelling/linked-cv-generator#readme",
+  "homepage": "https://github.com/spaelling/linkedin-cv-generator#readme",
   "dependencies": {
     "consolidate": "^1.0.1",
     "gulp": "^4.0.2",
