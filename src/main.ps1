@@ -1,3 +1,5 @@
+# REMEMBER TO SET $TargetFolder TO THE FOLDER CONTAINING THE LINKEDIN DATA EXPORT
+
 # npm install to get gulp up and running - assuming node.js is already installed
 npm install
 
@@ -22,3 +24,5 @@ npx gulp 'Build Markdown CV'
 
 # open generated html file in MS edge
 &'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe' @((Resolve-Path -Path ".\output\cv.html").Path)
+
+# optionally print to PDF from the browser

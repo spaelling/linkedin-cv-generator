@@ -74,5 +74,5 @@ $(
   }
 )
 
-CV generated using [github.com/spaelling/linked-cv-generator](https://github.com/spaelling/linked-cv-generator)
+Powered by [github.com/spaelling/linked-cv-generator](https://github.com/spaelling/linked-cv-generator)
 "@
