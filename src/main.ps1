@@ -14,6 +14,8 @@ $null = New-Item -ItemType Directory -Force -Path $OutputDirectory
 # output to markdown
 $Template | Out-File -FilePath "$OutputDirectory\cv.md" -Force -Encoding utf8
 
+# review the markdown. You may need to make manual adjustments before continuing
+
 # run build task
 npx gulp 'Build Markdown CV'
 # you can also run the build task (ctrl+shift+b) which will set up a watcher that automatically converts the markdown to html when the markdown is changed (triggers on save)
